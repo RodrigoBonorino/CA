@@ -9,47 +9,40 @@ package mavenproject2.playlistapp;
  * @author Rodrigo
  */
 import java.util.ArrayList;
+import java.util.List;
 
 public class MusicManager {
-    private final ArrayList<Playlist> playlists;
+    private List<Playlist> playlists;
 
     // Constructor
     public MusicManager() {
         this.playlists = new ArrayList<>();
     }
 
-    
     public void createPlaylist(String name) {
         Playlist playlist = new Playlist(name);
         playlists.add(playlist);
     }
 
-   
     public void addSongToPlaylist(Song song, Playlist playlist) {
         playlist.addSong(song);
     }
 
-    
     public void removeSongFromPlaylist(Song song, Playlist playlist) {
         playlist.removeSong(song);
     }
-
 
     public int getNumberOfPlaylists() {
         return playlists.size();
     }
 
-    
-    public Playlist getPlaylistByName(String name){
-        for(Playlist playlist : playlists){
-            if (!playlist.getName().equals(name)){
-            } else {
+    public Playlist getPlaylistByName(String name) {
+        for (Playlist playlist : playlists) {
+            if (playlist.getName().equals(name)) {
                 return playlist;
             }
         }
-        return null; // Return null
+        return null; // Playlist not found
     }
-
-    
 }
 

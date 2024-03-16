@@ -9,10 +9,11 @@ package mavenproject2.playlistapp;
  * @author Rodrigo
  */
 import java.util.ArrayList;
+import java.util.List;
 
 public class Playlist {
-    private final String name;
-    private final ArrayList<Song> songs;
+    private String name;
+    private List<Song> songs;
 
     // Constructor
     public Playlist(String name) {
@@ -36,13 +37,13 @@ public class Playlist {
     }
 
     // Obtain all songs from playlist
-    public ArrayList<Song> getAllSongs() {
+    public List<Song> getAllSongs() {
         return songs;
     }
 
-    Object getName() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    // Obtain playlist name
+    public String getName() {
+        return name;
     }
-
-   
 }
+
